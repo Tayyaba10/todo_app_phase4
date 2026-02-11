@@ -68,10 +68,10 @@ docker build -t todo-backend:v1.0.0 .
 Once built, you can run the containers:
 ```bash
 # Run frontend (make sure backend is running first)
-docker run -d -p 3000:3000 --name todo-frontend-app todo-frontend
+docker run -d -p 3000:3000 --name todo-frontend todo-frontend
 
 # Run backend
-docker run -d -p 8000:8000 --name todo-backend-app todo-backend
+docker run -d -p 8000:8000 --name todo-backend todo-backend
 ```
 
 ## Troubleshooting

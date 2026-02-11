@@ -48,7 +48,7 @@ The application is deployed on Kubernetes using Helm charts for packaging and co
 2. **Deploy with Helm**:
    ```bash
    # Navigate to the chart directory
-   cd charts/todo-chatbot
+   cd todo-chatbot
 
    # Install the chart
    helm install todo-chatbot . --namespace todo-chatbot --create-namespace

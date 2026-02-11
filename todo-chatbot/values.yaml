@@ -23,6 +23,10 @@ backend:
       value: "sqlite:///./test.db"
     - name: PYTHONPATH
       value: "/app/src"
+    - name: JWT_SECRET_KEY
+      value: "supersecretkey123"
+    - name: BETTER_AUTH_SECRET
+      value: "anothersecret456"
   # Backend autoscaling configuration
   autoscaling:
     enabled: false
