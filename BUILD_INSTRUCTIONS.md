@@ -71,7 +71,7 @@ Once built, you can run the containers:
 docker run -d -p 3000:3000 --name todo-frontend todo-frontend
 
 # Run backend
-docker run -d -p 8000:8000 --name todo-backend todo-backend
+docker run -d -p 8000:8000 --name todo-backend todo-backend-app
 ```
 
 ## Troubleshooting

@@ -43,15 +43,15 @@ def register(
     # In a real application, you would hash the password before storing it
     # For now, we'll simulate user creation
     from passlib.context import CryptContext
-    pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+    pwd_context = CryptContext(schemes=["bcrypt_sha256"], deprecated="auto")
 
     raw_password = register_data.password.strip()
 
-    if len(raw_password.encode("utf-8")) > 72:
-        raise HTTPException(
-            status_code=400,
-            detail="Password must be 72 characters or fewer"
-        )
+    # if len(raw_password.encode("utf-8")) > 72:
+    #     raise HTTPException(
+    #         status_code=400,
+    #         detail="Password must be 72 characters or fewer"
+    #     )
     hashed_password = pwd_context.hash(raw_password)
 
     # Create new user
@@ -106,7 +106,7 @@ def login(
         )
 
     from passlib.context import CryptContext
-    pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+    pwd_context = CryptContext(schemes=["bcrypt_sha256"], deprecated="auto")
 
     # Verify the password hash
     if not pwd_context.verify(login_data.password, user.hashed_password):
